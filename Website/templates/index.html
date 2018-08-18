@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title> Senses </title>
+
+
+
+	<link href="https://fonts.googleapis.com/css?family=Poiret+One " rel="stylesheet" >
+	<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz " rel="stylesheet" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	 <link rel="stylesheet" type="text/css" href="/static/jquery.fullPage.css" />
+
+<!-- <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" /> -->
+
+
+
+	<style type="text/css">
+
+
+
+		body {	font-family:'Poiret One' ;
+				font-size: 28px;
+				color:white;
+				background-color:black;
+				}
+
+		input[type=submit] {
+    	background-color: #579BA4;
+    	border: none;
+    	color: white;
+    	padding: 12px 30px;
+    	text-decoration: none;
+    	margin: 4px 2px;
+    	cursor: pointer;
+			font-size:19px;
+			}
+
+			input[type=file] {
+	    	background-color: #579BA4;
+	    	border: none;
+	    	color: white;
+	    	padding: 10px 10px;
+	    	text-decoration: none;
+	    	cursor: pointer;
+				font-size:15px;
+				}
+
+
+			.font { font-family:Yanone Kaffeesatz ;
+				}
+
+			img { width: 50%; height: auto; margin:80px 0 0 0;}
+
+			.section{
+				text-align:center;
+			}
+
+			p{
+				width: 80%;
+				margin:  auto;
+			}
+			#section0{
+				background: -webkit-gradient(linear, top left, bottom left, from(#4bbfc3), to(#7baabe));
+				background: -webkit-linear-gradient(#5282A4, #C49275);
+				background: linear-gradient(#5282A4,#C49275);
+			}
+
+			#section2{
+				background: -webkit-gradient(linear, top left, bottom left, from(#969ac6), to(#636F8F));
+				background: -webkit-linear-gradient(#EDA975, #579BA4);
+				background: linear-gradient(#EDA975,#579BA4);
+			}
+
+			#section3{
+				background: -webkit-gradient(linear, top left, bottom left, from(#969ac6), to(#636F8F));
+				background: -webkit-linear-gradient(#4A858C, #636F8F);
+				background: linear-gradient(#4A858C,#636F8F);
+			}
+
+
+
+</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'jquery.fullPage.js') }}"></script>  
+<!-- <script type="text/javascript" src="jquery.fullPage.js"></script> -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#fullpage').fullpage({
+			anchors: ['firstPage', 'secondPage', '3rdPage'],
+			sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+			navigation: true,
+			navigationPosition: 'right',
+			navigationTooltips: ['First page', 'Second page', 'Third and last page'],
+			responsiveWidth: 900,
+			afterResponsive: function(isResponsive){
+
+			}
+
+		});
+	});
+</script>
+
+</head>
+
+
+<body>
+
+
+	<div id="fullpage">
+
+		<div class="section" id="section0" >
+			<img
+    	src="/static/Untitled-1.svg"
+			height="contains"/>
+		</div>
+
+		<div class="section" id="section2"><H3 style="font-size:40px"> Description </H3>
+			<p style="font-size:25px;" > Ever wondered what pictures sound like? Well, Senses is a VR
+				 experience that you need to take to ‘listen’ and to feel your pictures.
+Insert any image and enjoy listening to it in a serene VR environment
+			</p>
+		</div>
+
+		<div class="section" id="section3">
+			<p> Upload an Image</p>
+			<br><br>
+
+
+			<form action="/upload" method = 'POST' enctype="multipart/form-data" >
+            <span class="btn btn-default btn-file">
+              <input type="file" name="image">
+            </span>
+						<br><br><br><br>
+    <input type="submit" value="Upload your image" class="btn btn-primary">
+  </form>
+		</div>
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+
+</html>
